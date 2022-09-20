@@ -1,10 +1,11 @@
 import { Post } from "../Post";
 
-export const PostList = (posts) => {
+export const PostList = ({ posts }) => {
   return (
     <ul>
-      {posts.map((post) => (
+      {posts.map((post, index) => (
         <Post
+          key={index}
           id={post.id}
           avatar={post.avatar}
           authorName={post.authorName}
@@ -14,7 +15,6 @@ export const PostList = (posts) => {
           text={post.text}
         />
       ))}
-      <li>Post</li>
     </ul>
   );
 };

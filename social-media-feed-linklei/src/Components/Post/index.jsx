@@ -1,6 +1,6 @@
 import { Figure, Image } from "react-bootstrap";
 
-export const Post = (avatar, authorName, date, category, image, text) => {
+export const Post = ({ avatar, authorName, date, category, image, text }) => {
   return (
     <li>
       <Image
