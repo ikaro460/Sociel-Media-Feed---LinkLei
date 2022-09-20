@@ -1,3 +1,5 @@
+import { Post } from "../Post";
+
 export const PostList = () => {
   const posts = [
     {
@@ -23,10 +25,15 @@ export const PostList = () => {
   return (
     <ul>
       {posts.map((post) => (
-        <li>
-          <h2>{post.authorName}</h2>
-          <p>{post.text}</p>
-        </li>
+        <Post
+          id={post.id}
+          avatar={post.avatar}
+          authorName={post.authorName}
+          date={post.date}
+          category={post.category}
+          image={post.image}
+          text={post.text}
+        />
       ))}
       <li>Post</li>
     </ul>
