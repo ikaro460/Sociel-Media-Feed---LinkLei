@@ -1,6 +1,6 @@
 import Figure from "react-bootstrap/Figure";
 import Image from "react-bootstrap/Image";
-import Dropdown from "react-bootstrap/Dropdown";
+import { CustomDropdown } from "../Dropdown/index";
 import { Container } from "./styles";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 
@@ -8,14 +8,7 @@ export const Post = ({ avatar, authorName, date, category, image, text }) => {
   return (
     <Container>
       <li>
-        <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic" />
-
-          <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Editar</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Excluir</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+        <CustomDropdown />
         <Figure>
           <Image
             roundedCircle
