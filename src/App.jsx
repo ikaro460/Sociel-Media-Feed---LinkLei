@@ -6,7 +6,7 @@ function App() {
     {
       id: 1,
       avatar:
-        "https://cdna.artstation.com/p/assets/images/images/028/581/580/large/2d-illustrator-4.jpg?1594883171",
+        "https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg",
       authorName: "Ícaro Gaspar Nascimento",
       date: "11-02-2022",
       category: "Post",
@@ -16,7 +16,7 @@ function App() {
     {
       id: 2,
       avatar:
-        "https://cdna.artstation.com/p/assets/images/images/028/581/580/large/2d-illustrator-4.jpg?1594883171",
+        "https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg",
       authorName: "Ícaro Gaspar Nascimento",
       date: "11-02-2022",
       category: "Post",
