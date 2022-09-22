@@ -11,7 +11,7 @@ function App() {
       date: "11-02-2022",
       category: "Post",
       image: "url",
-      text: "lorem ipsum",
+      text: "Ullamco tempor laboris amet ipsum magna elit proident voluptate deserunt qui. Elit ea minim ad labore do quis cupidatat consequat. Deserunt minim commodo veniam sunt magna anim occaecat ipsum adipisicing voluptate et commodo eiusmod officia. Excepteur irure cupidatat fugiat dolor. Nisi ut dolor cupidatat qui consectetur aliqua ut id incididunt pariatur velit commodo. ",
     },
     {
       id: 2,

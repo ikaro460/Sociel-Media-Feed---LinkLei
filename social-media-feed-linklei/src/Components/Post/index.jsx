@@ -2,6 +2,7 @@ import Figure from "react-bootstrap/Figure";
 import Image from "react-bootstrap/Image";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Container } from "./styles";
+import ReactReadMoreReadLess from "react-read-more-read-less";
 
 export const Post = ({ avatar, authorName, date, category, image, text }) => {
   return (
@@ -32,7 +33,15 @@ export const Post = ({ avatar, authorName, date, category, image, text }) => {
           }
         </h6>
         <h3>{category}</h3>
-        <p>{text}</p>
+        <p>
+          <ReactReadMoreReadLess
+            charLimit={150}
+            readMoreText={"Read more"}
+            readLessText={"Read less"}
+          >
+            {text}
+          </ReactReadMoreReadLess>
+        </p>
         {image && (
           <Figure>
             <Figure.Image
