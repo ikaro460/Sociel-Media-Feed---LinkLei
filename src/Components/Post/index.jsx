@@ -4,7 +4,15 @@ import { CustomDropdown } from "../Dropdown/index";
 import { Container, PostHeader, ProfileInfo, StyledContainer } from "./styles";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 
-export const Post = ({ avatar, authorName, date, category, image, text }) => {
+export const Post = ({
+  id,
+  avatar,
+  authorName,
+  date,
+  category,
+  image,
+  text,
+}) => {
   return (
     <StyledContainer>
       <li>
@@ -29,7 +37,7 @@ export const Post = ({ avatar, authorName, date, category, image, text }) => {
               </h6>
             </div>
           </ProfileInfo>
-          <CustomDropdown />
+          <CustomDropdown id={id} />
         </PostHeader>
         <h3>{category}</h3>
         <p>

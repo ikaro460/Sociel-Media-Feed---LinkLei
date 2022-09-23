@@ -1,6 +1,6 @@
-import { usePostList } from "../../providers/PostListProvider";
-import { Post } from "../Post";
-import { StyledList } from "./styles";
+import { createContext, useContext, useState } from "react";
+
+export const PostListContext = createContext();
 
 const BasePosts = [
   {
@@ -25,22 +25,18 @@ const BasePosts = [
   },
 ];
 
-export const PostList = () => {
-  const { postList } = usePostList();
+export const PostListProvider = ({ children }) => {
+  const [postList, setPostList] = useState(BasePosts);
+
+  const addPost = (newPost) => {
+    setPostList([...postList, newPost]);
+  };
+
   return (
-    <StyledList>
-      {postList.map((post, index) => (
-        <Post
-          key={index}
-          id={post.id}
-          avatar={post.avatar}
-          authorName={post.authorName}
-          date={post.date}
-          category={post.category}
-          image={post.image}
-          text={post.text}
-        />
-      ))}
-    </StyledList>
+    <PostListContext.Provider value={{ postList, addPost }}>
+      {children}
+    </PostListContext.Provider>
   );
 };
+
+export const usePostList = () => useContext(PostListContext);

@@ -6,7 +6,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 // The forwardRef is important!!
 // Dropdown needs access to the DOM node in order to position the Menu
 
-export const CustomDropdown = () => {
+export const CustomDropdown = ({ id }) => {
   const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     // eslint-disable-next-line jsx-a11y/anchor-is-valid
     <a
