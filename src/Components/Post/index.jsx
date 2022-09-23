@@ -1,8 +1,15 @@
 import Figure from "react-bootstrap/Figure";
 import Image from "react-bootstrap/Image";
 import { CustomDropdown } from "../Dropdown/index";
-import { Container, PostHeader, ProfileInfo, StyledContainer } from "./styles";
+import {
+  CategoryContainer,
+  Container,
+  PostHeader,
+  ProfileInfo,
+  StyledContainer,
+} from "./styles";
 import ReactReadMoreReadLess from "react-read-more-read-less";
+import { CategorySymbol } from "../CategorySymbol";
 
 export const Post = ({
   id,
@@ -13,6 +20,7 @@ export const Post = ({
   image,
   text,
 }) => {
+  console.log(category);
   return (
     <StyledContainer>
       <li>
@@ -39,7 +47,10 @@ export const Post = ({
           </ProfileInfo>
           <CustomDropdown id={id} />
         </PostHeader>
-        <h3>{category}</h3>
+        <CategoryContainer>
+          <CategorySymbol category={category} />
+          <h3>{category}</h3>
+        </CategoryContainer>
         <p>
           <ReactReadMoreReadLess
             charLimit={500}

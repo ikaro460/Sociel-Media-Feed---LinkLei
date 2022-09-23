@@ -32,3 +32,14 @@ export const ProfileInfo = styled.div`
     margin: 0 5px;
   }
 `;
+
+export const CategoryContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  h3,
+  svg {
+    margin: 2px;
+  }
+`;
