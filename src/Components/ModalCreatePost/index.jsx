@@ -90,6 +90,8 @@ export const ModalCreatePost = () => {
                 <option value="Artigo">Artigo</option>
                 <option value="Evento">Evento</option>
               </select>
+
+              {/*  Didn´t use Auto Expand TextArea because it was bugging with hook-form register  */}
               <textarea
                 placeholder="Escrever publicação"
                 rows={5}

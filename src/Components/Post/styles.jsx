@@ -5,7 +5,6 @@ export const StyledContainer = styled.div`
   color: #666;
   margin: 5px 0px;
   padding: 15px;
-  width: 100%;
   list-style: none;
   text-align: start;
   border-radius: 5px;
@@ -24,7 +23,7 @@ export const StyledContainer = styled.div`
 `;
 
 export const PostHeader = styled.div`
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
 
   h1 {

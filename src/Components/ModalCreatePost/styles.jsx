@@ -43,7 +43,7 @@ export const StyledModalHeader = styled.div`
     background-color: var(--purple-1);
     position: absolute;
     left: 450px;
-    bottom: 385px;
+    top: -10px;
   }
 
   border-left: 5px solid var(--purple-1);

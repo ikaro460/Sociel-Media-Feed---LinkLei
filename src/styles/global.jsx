@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   
-  //DECLARANDO VARIAVEIS DE COR / PALETA
+  //GLOBAL COLOR PALETTE
   
   :root {
         --background-blue: #e9ecf5;
