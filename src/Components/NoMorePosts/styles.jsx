@@ -12,6 +12,11 @@ export const StyledContainer = styled.div`
   object-fit: contain;
 
   border-radius: 5px;
+
+  h5 {
+    color: #666;
+    opacity: 0.7;
+  }
 `;
 
 export const PostTextInput = styled.div`

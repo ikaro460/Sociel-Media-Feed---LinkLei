@@ -23,7 +23,7 @@ export const StyledContainer = styled.div`
 `;
 
 export const PostHeader = styled.div`
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
 
   h1 {
