@@ -1,12 +1,12 @@
 import Figure from "react-bootstrap/Figure";
 import Image from "react-bootstrap/Image";
 import { CustomDropdown } from "../Dropdown/index";
-import { Container, PostHeader, ProfileInfo } from "./styles";
+import { Container, PostHeader, ProfileInfo, StyledContainer } from "./styles";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 
 export const Post = ({ avatar, authorName, date, category, image, text }) => {
   return (
-    <Container>
+    <StyledContainer>
       <li>
         <PostHeader>
           <ProfileInfo>
@@ -52,6 +52,6 @@ export const Post = ({ avatar, authorName, date, category, image, text }) => {
           </Figure>
         )}
       </li>
-    </Container>
+    </StyledContainer>
   );
 };

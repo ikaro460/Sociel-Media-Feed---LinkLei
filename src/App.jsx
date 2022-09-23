@@ -1,4 +1,5 @@
 import "./App.css";
+import { ModalCreatePost } from "./Components/ModalCreatePost";
 import { PostList } from "./Components/PostList";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <ModalCreatePost />
         <PostList posts={posts} />
       </header>
     </div>
