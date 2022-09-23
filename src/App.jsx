@@ -2,17 +2,16 @@ import "./App.css";
 import { ModalCreatePost } from "./Components/ModalCreatePost";
 import { NoMorePosts } from "./Components/NoMorePosts";
 import { PostList } from "./Components/PostList";
-import { GlobalStyled } from "./styles/global";
+import GlobalStyle from "./styles/global";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <GlobalStyled>
-          <ModalCreatePost />
-          <PostList />
-          <NoMorePosts />
-        </GlobalStyled>
+        <ModalCreatePost />
+        <PostList />
+        <NoMorePosts />
+        <GlobalStyle />
       </header>
     </div>
   );

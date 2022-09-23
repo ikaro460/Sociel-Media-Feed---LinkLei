@@ -20,7 +20,6 @@ export const Post = ({
   image,
   text,
 }) => {
-  console.log(category);
   return (
     <StyledContainer>
       <li>
@@ -29,20 +28,15 @@ export const Post = ({
             <Figure>
               <Image
                 roundedCircle
-                width={80}
-                height={80}
+                width={50}
+                height={50}
                 alt="avatar"
                 src={avatar}
               />
             </Figure>
             <div>
-              <h2>{authorName}</h2>
-              <h6>
-                Publicado em{" "}
-                {
-                  date //12 de Dezembro de 2012 as 16:00
-                }
-              </h6>
+              <h1>{authorName}</h1>
+              <h6>Publicado em {date}</h6>
             </div>
           </ProfileInfo>
           <CustomDropdown id={id} />

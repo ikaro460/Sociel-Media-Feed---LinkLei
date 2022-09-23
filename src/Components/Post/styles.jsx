@@ -2,22 +2,37 @@ import styled from "styled-components";
 
 export const StyledContainer = styled.div`
   background-color: #fff;
-  margin: 10px 0px;
+  margin: 5px 0px;
   padding: 15px;
   width: 100%;
   list-style: none;
   text-align: start;
+  border-radius: 5px;
+
+  h1 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--title-blue);
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 900;
+    color: var(--title-blue);
+  }
 `;
 
 export const PostHeader = styled.div`
   display: flex;
   justify-content: space-between;
 
+  h1,
+  h6 {
+    margin: 0;
+  }
+
   img {
     margin: 0 5px;
-  }
-  fig {
-    width: 100%;
   }
 `;
 
@@ -37,6 +52,7 @@ export const CategoryContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
+  margin: 5px 0;
 
   h3,
   svg {
