@@ -1,6 +1,7 @@
 import "./App.css";
 import { ModalCreatePost } from "./Components/ModalCreatePost";
 import { PostList } from "./Components/PostList";
+import { GlobalStyled } from "./styles/global";
 
 function App() {
   const posts = [
@@ -26,12 +27,14 @@ function App() {
     },
   ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <ModalCreatePost />
-        <PostList posts={posts} />
-      </header>
-    </div>
+    <GlobalStyled>
+      <div className="App">
+        <header className="App-header">
+          <ModalCreatePost />
+          <PostList posts={posts} />
+        </header>
+      </div>
+    </GlobalStyled>
   );
 }
 
