@@ -6,19 +6,24 @@ export const StyledContainer = styled.div`
   margin: 5px 0px;
   padding: 15px;
   list-style: none;
-  text-align: start;
   border-radius: 5px;
 
   h1 {
     font-size: 1.3rem;
     font-weight: 900;
     color: var(--title-blue);
+    cursor: pointer;
+  }
+
+  h1:hover {
+    text-decoration: underline;
   }
 
   h3 {
     font-size: 1rem;
     font-weight: 900;
     color: var(--title-blue);
+    cursor: pointer;
   }
 `;
 
@@ -70,5 +75,15 @@ export const CategoryContainer = styled.div`
   h3,
   svg {
     margin: 2px;
+  }
+`;
+
+export const StyledReadMore = styled.div`
+  span {
+    color: blue;
+  }
+
+  span:hover {
+    text-decoration: underline;
   }
 `;

@@ -26,6 +26,11 @@ export const StyledOpenModal = styled.button`
   border: none;
   border-radius: 5px;
 
+  :hover {
+    background-color: lightgrey;
+    transition: 0.5s;
+  }
+
   svg,
   p {
     margin: 5px;

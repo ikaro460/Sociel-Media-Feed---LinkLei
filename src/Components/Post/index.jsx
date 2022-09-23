@@ -7,6 +7,7 @@ import {
   PostHeader,
   ProfileInfo,
   StyledContainer,
+  StyledReadMore,
 } from "./styles";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import { CategorySymbol } from "../CategorySymbol";
@@ -46,13 +47,15 @@ export const Post = ({
           <h3>{category}</h3>
         </CategoryContainer>
         <p>
-          <ReactReadMoreReadLess
-            charLimit={500}
-            readMoreText={"Read more"}
-            readLessText={"Read less"}
-          >
-            {text}
-          </ReactReadMoreReadLess>
+          <StyledReadMore>
+            <ReactReadMoreReadLess
+              charLimit={500}
+              readMoreText={"Leia mais"}
+              readLessText={"Ocultar"}
+            >
+              {text}
+            </ReactReadMoreReadLess>
+          </StyledReadMore>
         </p>
         {image && (
           <Figure>
