@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import { InputImg, PostTextInput, StyledContainer } from "./styles";
+import { PostTextInput, StyledContainer } from "./styles";
 
 export const ModalCreatePost = () => {
   const [show, setShow] = useState(false);

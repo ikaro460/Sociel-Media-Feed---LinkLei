@@ -1,5 +1,6 @@
 import "./App.css";
 import { ModalCreatePost } from "./Components/ModalCreatePost";
+import { NoMorePosts } from "./Components/NoMorePosts";
 import { PostList } from "./Components/PostList";
 import { GlobalStyled } from "./styles/global";
 
@@ -32,6 +33,7 @@ function App() {
         <GlobalStyled>
           <ModalCreatePost />
           <PostList posts={posts} />
+          <NoMorePosts />
         </GlobalStyled>
       </header>
     </div>
