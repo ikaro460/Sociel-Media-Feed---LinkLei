@@ -5,6 +5,8 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { PostTextInput, StyledContainer } from "./styles";
 import { usePostList } from "../../providers/PostListProvider";
+import moment from "moment";
+import "moment/locale/pt-br";
 
 export const ModalCreatePost = () => {
   const { postList, addPost } = usePostList();
@@ -34,7 +36,7 @@ export const ModalCreatePost = () => {
       avatar:
         "https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg",
       authorName: formData.authorName,
-      date: "11-02-2022",
+      date: moment().format("LLL"),
       category: formData.category,
       image: formData.image === undefined ? null : formData.image,
       text: formData.text,
