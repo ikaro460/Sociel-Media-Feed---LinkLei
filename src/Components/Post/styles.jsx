@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledContainer = styled.div`
   background-color: #fff;
+  color: #666;
   margin: 5px 0px;
   padding: 15px;
   width: 100%;
@@ -26,6 +27,14 @@ export const PostHeader = styled.div`
   display: flex;
   justify-content: space-between;
 
+  h1 {
+    font-size: 1rem;
+  }
+
+  h6 {
+    font-size: 0.9rem;
+  }
+
   h1,
   h6 {
     margin: 0;
@@ -39,6 +48,11 @@ export const PostHeader = styled.div`
 export const ProfileInfo = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  figure {
+    margin: 0;
+  }
 
   div {
     display: flex;
@@ -52,7 +66,7 @@ export const CategoryContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin: 5px 0;
+  margin: 15px 0;
 
   h3,
   svg {
