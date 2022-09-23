@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { PostTextInput, StyledContainer } from "./styles";
+import { InputImg, PostTextInput, StyledContainer } from "./styles";
 
 export const ModalCreatePost = () => {
   const [show, setShow] = useState(false);
@@ -30,9 +29,15 @@ export const ModalCreatePost = () => {
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <button variant="secondary" onClick={() => console.log("imagem")}>
-            Imagem
-          </button>
+          <label for="photo-upload">
+            <div>Imagem</div>
+          </label>
+          <input
+            style={{ display: "none" }}
+            id="photo-upload"
+            type="file"
+            onChange={() => console.log("click")}
+          />
           <button variant="primary" onClick={() => console.log("post")}>
             Publicar
           </button>
