@@ -1,8 +1,9 @@
 import { Post } from "../Post";
+import { StyledList } from "./styles";
 
 export const PostList = ({ posts }) => {
   return (
-    <ul>
+    <StyledList>
       {posts.map((post, index) => (
         <Post
           key={index}
@@ -15,6 +16,6 @@ export const PostList = ({ posts }) => {
           text={post.text}
         />
       ))}
-    </ul>
+    </StyledList>
   );
 };

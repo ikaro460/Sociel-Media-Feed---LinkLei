@@ -43,12 +43,7 @@ export const Post = ({ avatar, authorName, date, category, image, text }) => {
         </p>
         {image && (
           <Figure>
-            <Figure.Image
-              width={171}
-              height={180}
-              alt="post-image"
-              src={image}
-            />
+            <Figure.Image alt="post-image" src={image} />
           </Figure>
         )}
       </li>
