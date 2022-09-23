@@ -24,6 +24,7 @@ export const StyledOpenModal = styled.button`
   align-items: center;
   padding: 10px 30px;
   border: none;
+  border-radius: 5px;
 
   svg,
   p {
