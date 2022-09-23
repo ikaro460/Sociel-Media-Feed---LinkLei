@@ -27,14 +27,14 @@ function App() {
     },
   ];
   return (
-    <GlobalStyled>
-      <div className="App">
-        <header className="App-header">
+    <div className="App">
+      <header className="App-header">
+        <GlobalStyled>
           <ModalCreatePost />
           <PostList posts={posts} />
-        </header>
-      </div>
-    </GlobalStyled>
+        </GlobalStyled>
+      </header>
+    </div>
   );
 }
 
