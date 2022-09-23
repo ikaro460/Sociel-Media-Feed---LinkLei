@@ -34,7 +34,7 @@ export const Post = ({ avatar, authorName, date, category, image, text }) => {
         <h3>{category}</h3>
         <p>
           <ReactReadMoreReadLess
-            charLimit={150}
+            charLimit={500}
             readMoreText={"Read more"}
             readLessText={"Read less"}
           >
