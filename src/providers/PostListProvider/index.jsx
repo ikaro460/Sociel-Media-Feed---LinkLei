@@ -10,8 +10,19 @@ export const PostListProvider = ({ children }) => {
     setPostList([...postList, newPost]);
   };
 
+  const deletePost = (id) => {
+    setPostList(postList.filter((e) => e.id !== id));
+  };
+
+  const editPost = (editedPost, id) => {
+    console.log(postList.find((e) => e.id === id));
+    console.log(editedPost);
+  };
+
   return (
-    <PostListContext.Provider value={{ postList, addPost }}>
+    <PostListContext.Provider
+      value={{ postList, setPostList, addPost, deletePost, editPost }}
+    >
       {children}
     </PostListContext.Provider>
   );

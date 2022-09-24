@@ -11,6 +11,7 @@ import {
 } from "./styles";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import { CategorySymbol } from "../CategorySymbol";
+import { ModalCreatePost } from "../ModalCreatePost";
 
 export const Post = ({
   id,
@@ -46,7 +47,7 @@ export const Post = ({
           <CategorySymbol category={category} />
           <h3>{category}</h3>
         </CategoryContainer>
-        <p>
+        <div>
           <StyledReadMore>
             <ReactReadMoreReadLess
               charLimit={500}
@@ -56,7 +57,7 @@ export const Post = ({
               {text}
             </ReactReadMoreReadLess>
           </StyledReadMore>
-        </p>
+        </div>
         {image && (
           <Figure>
             <Figure.Image alt="post-image" src={image} />

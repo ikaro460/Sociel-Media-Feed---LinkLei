@@ -19,13 +19,14 @@ import { usePostToEdit } from "../../providers/PostToEditProvider";
 //Used one component for rendering modals for both editing and adding post
 //Worked that out using conditional renders
 
-export const ModalCreatePost = () => {
+export const ModalEditPost = () => {
   const { postList, addPost, editPost } = usePostList();
-  const { showModal, hideModal, getShowModal } = useShowModal();
   const { getPostToEdit } = usePostToEdit();
 
+  const { showModal, hideModal, getShowModal } = useShowModal();
+
   const handleClose = () => hideModal();
-  const handleShow = () => showModal("add");
+  const handleShow = () => showModal("edit");
 
   const schema = yup.object().shape({
     authorName: yup.string().required("Campo Obrigatório"),
@@ -36,36 +37,28 @@ export const ModalCreatePost = () => {
   const { register, handleSubmit } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (formData) => {
-    console.log(formData);
-
     const handledFormData = {
-      id: postList.length + 1,
+      id: getPostToEdit,
       avatar:
         "https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg",
       authorName: formData.authorName,
-      date: moment().format("LLL"),
+      date: postList.find((e) => e.id === getPostToEdit).date,
       category: formData.category,
       image: formData.image === undefined ? null : formData.image,
       text: formData.text,
     };
 
-    addPost(handledFormData);
+    editPost(handledFormData, getPostToEdit);
     handleClose();
     console.log(postList);
   };
 
   return (
     <>
-      <StyledOpenModal>
-        <button onClick={handleShow}>
-          <CreatePostIcon />
-          <p>Criar Post</p>
-        </button>
-      </StyledOpenModal>
-      <Modal show={getShowModal === "add" ? true : false} onHide={handleClose}>
+      <Modal show={getShowModal === "edit" ? true : false} onHide={handleClose}>
         <StyledModalHeader>
           <Modal.Header closeButton>
-            <Modal.Title>Criar Post</Modal.Title>
+            <Modal.Title>Editar Post</Modal.Title>
           </Modal.Header>
         </StyledModalHeader>
         <Modal.Body>

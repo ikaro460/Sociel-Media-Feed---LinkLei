@@ -1,3 +1,5 @@
+//used this constant as a base to work things out without a back end
+
 export const BasePosts = [
   {
     id: 1,
@@ -15,7 +17,7 @@ export const BasePosts = [
     avatar:
       "https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg",
     authorName: "Ícaro Gaspar Nascimento",
-    date: "23 de setembro de 2022 às 14:31",
+    date: "23 de setembro de 2022 às 16:32",
     category: "Post",
     text: "Post 2 lorem ipsum 2",
   },
