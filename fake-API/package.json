@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "heroku": "^7.63.4",
+    "json-server": "^0.17.0"
+  }
+}
