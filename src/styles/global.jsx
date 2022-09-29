@@ -15,8 +15,7 @@ export default createGlobalStyle`
   
   body{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     font-weight: 400;
     font-family: sans-serif, "Source Sans Pro";
     background-color: var(--background-blue);
@@ -26,4 +25,10 @@ export default createGlobalStyle`
     padding: 25px;
     width: 700px;
   }
+
+  .App-header {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
 `;

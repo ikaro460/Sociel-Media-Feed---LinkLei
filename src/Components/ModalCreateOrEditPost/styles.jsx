@@ -1,22 +1,5 @@
 import styled from "styled-components";
 
-export const StyledContainer = styled.div`
-  display: flex;
-  justify-content: center;
-
-  background-color: #fff;
-  padding: 15px;
-  margin: 5px 0px;
-  width: 100%;
-  list-style: none;
-  object-fit: contain;
-  border-radius: 5px;
-
-  form {
-    margin: 5px;
-  }
-`;
-
 export const StyledOpenModal = styled.div`
   display: flex;
   justify-content: center;
@@ -49,6 +32,23 @@ export const StyledOpenModal = styled.div`
       color: var(--title-blue);
       font-weight: 600;
     }
+  }
+`;
+
+export const StyledContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  background-color: #fff;
+  padding: 15px;
+  margin: 5px 0px;
+  width: 100%;
+  list-style: none;
+  object-fit: contain;
+  border-radius: 5px;
+
+  form {
+    margin: 5px;
   }
 `;
 

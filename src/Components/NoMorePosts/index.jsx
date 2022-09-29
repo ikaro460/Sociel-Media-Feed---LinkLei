@@ -1,9 +1,55 @@
+import { useRef, useState } from "react";
+import { useEffect } from "react";
+import { LoadingAnimation } from "../../graphics";
+import { useCurrentPage } from "../../providers/CurrentPage";
+import { usePostList } from "../../providers/PostListProvider";
+import { api } from "../../services/api";
 import { StyledContainer } from "./styles";
 
 export const NoMorePosts = () => {
+  const { getCurrentPage, setCurrentPage } = useCurrentPage();
+  const { totalCount, postList } = usePostList();
+  const containerRef = useRef();
+
+  // if this is false it means the list has ended
+  const end = postList.length < totalCount;
+
+  const fetchMore = () => {
+    setCurrentPage(getCurrentPage + 1);
+  };
+
+  const options = {
+    root: containerRef.current,
+    rootMargin: "0px",
+    threshold: 1.0,
+  };
+
+  useEffect(() => {
+    console.log("mount observer");
+    const instersectionObserver = new IntersectionObserver(([entry]) => {
+      console.log(entry);
+      if (entry.isIntersecting) {
+        setCurrentPage((currentPage) => currentPage + 1);
+        console.log("observed");
+        //setCurrentPage((actualCurrentPage) => actualCurrentPage + 1);
+      }
+    }, options);
+    instersectionObserver.observe(containerRef.current);
+
+    return () => instersectionObserver.disconnect();
+  }, []);
+
   return (
-    <StyledContainer>
-      <h5>Não existem mais itens a serem exibidos</h5>
-    </StyledContainer>
+    <>
+      {end ? (
+        <div ref={containerRef}>
+          <LoadingAnimation />
+        </div>
+      ) : (
+        <StyledContainer>
+          <h5>Não existem mais itens a serem exibidos</h5>
+        </StyledContainer>
+      )}
+    </>
   );
 };

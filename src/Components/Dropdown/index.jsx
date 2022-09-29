@@ -3,6 +3,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { CustomToggleIcon, DeletePostIcon, EditPostIcon } from "../../graphics";
 import { usePostList } from "../../providers/PostListProvider";
 import { useShowModal } from "../../providers/ShowModalProvider";
+import { usePostToEdit } from "../../providers/PostToEditProvider";
 
 // ** CUSTOMIZED DROPDOWN COMPONENT FROM REACT-BOOTSTRAP ***
 
@@ -12,8 +13,16 @@ import { useShowModal } from "../../providers/ShowModalProvider";
 export const CustomDropdown = ({ id }) => {
   const { postList, addPost, deletePost } = usePostList();
   const { showModal, hideModal, getShowModal } = useShowModal();
+  const { setPostToEdit } = usePostToEdit();
 
-  const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
+  //calling modal and sending post content via DOM
+  const handleShowModal = () => {
+    const postToEdit = postList.find((e) => e.id === id);
+    setPostToEdit(postToEdit);
+    showModal();
+  };
+
+  const CustomToggle = React.forwardRef(({ onClick }, ref) => (
     // eslint-disable-next-line jsx-a11y/anchor-is-valid
     <a
       href=""
@@ -27,22 +36,6 @@ export const CustomDropdown = ({ id }) => {
     </a>
   ));
 
-  //using id key to edit and delete posts
-
-  const handleClick = (e) => {
-    console.log(e.target.innerHTML.substring(e.target.innerHTML.length - 6));
-    const actionType = e.target.innerHTML.substring(
-      e.target.innerHTML.length - 6
-    );
-    console.log(actionType);
-
-    if (actionType === "xcluir") {
-      deletePost(id);
-    } else if (actionType === "Editar") {
-      showModal("edit");
-    }
-  };
-
   return (
     <Dropdown>
       <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
@@ -50,11 +43,11 @@ export const CustomDropdown = ({ id }) => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        <Dropdown.Item eventKey="1" onClick={(e) => handleClick(e)}>
+        <Dropdown.Item eventKey="1" onClick={() => handleShowModal()}>
           <EditPostIcon />
           Editar
         </Dropdown.Item>
-        <Dropdown.Item eventKey="2" onClick={(e) => handleClick(e)}>
+        <Dropdown.Item eventKey="2" onClick={() => deletePost(id)}>
           <DeletePostIcon />
           Excluir
         </Dropdown.Item>

@@ -3,7 +3,6 @@ import Image from "react-bootstrap/Image";
 import { CustomDropdown } from "../Dropdown/index";
 import {
   CategoryContainer,
-  Container,
   PostHeader,
   ProfileInfo,
   StyledContainer,
@@ -11,7 +10,6 @@ import {
 } from "./styles";
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import { CategorySymbol } from "../CategorySymbol";
-import { ModalCreatePost } from "../ModalCreatePost";
 
 export const Post = ({
   id,
@@ -38,7 +36,7 @@ export const Post = ({
             </Figure>
             <div>
               <h1>{authorName}</h1>
-              <h6>Publicado em {date}</h6>
+              <h6>{date}</h6>
             </div>
           </ProfileInfo>
           <CustomDropdown id={id} />

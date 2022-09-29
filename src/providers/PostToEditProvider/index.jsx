@@ -5,7 +5,7 @@ import { createContext, useContext, useState } from "react";
 export const PostToEditContext = createContext();
 
 export const PostToEditProvider = ({ children }) => {
-  const [getPostToEdit, setPostToEdit] = useState(0);
+  const [getPostToEdit, setPostToEdit] = useState(false);
 
   return (
     <PostToEditContext.Provider value={{ getPostToEdit, setPostToEdit }}>

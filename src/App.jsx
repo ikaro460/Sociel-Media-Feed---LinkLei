@@ -1,18 +1,26 @@
 import "./App.css";
-import { ModalCreatePost } from "./Components/ModalCreatePost";
-import { ModalEditPost } from "./Components/ModalEditPost";
+import { ModalCreateOrEditPost } from "./Components/ModalCreateOrEditPost";
 import { NoMorePosts } from "./Components/NoMorePosts";
 import { PostList } from "./Components/PostList";
+import { LoadingAnimation } from "./graphics";
+import { usePostList } from "./providers/PostListProvider";
 import GlobalStyle from "./styles/global";
 
 function App() {
+  const { postList } = usePostList();
+
   return (
     <div className="App">
       <header className="App-header">
-        <ModalEditPost />
-        <ModalCreatePost />
+        <ModalCreateOrEditPost />
         <PostList />
-        <NoMorePosts />
+        {postList.length > 0 ? (
+          <>
+            <NoMorePosts />
+          </>
+        ) : (
+          <LoadingAnimation />
+        )}
         <GlobalStyle />
       </header>
     </div>

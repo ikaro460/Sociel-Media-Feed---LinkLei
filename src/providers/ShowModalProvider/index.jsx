@@ -5,14 +5,14 @@ import { createContext, useContext, useState } from "react";
 export const ShowModalAddContext = createContext();
 
 export const ShowModalProvider = ({ children }) => {
-  const [getShowModal, setShowModalAdd] = useState("");
+  const [getShowModal, setShowModalAdd] = useState(false);
 
-  const showModal = (modalType) => {
-    setShowModalAdd(modalType);
+  const showModal = () => {
+    setShowModalAdd(true);
   };
 
   const hideModal = () => {
-    setShowModalAdd("");
+    setShowModalAdd(false);
   };
 
   return (
