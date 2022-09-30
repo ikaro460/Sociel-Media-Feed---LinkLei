@@ -1,16 +1,12 @@
 import { useEffect } from "react";
 import { useCurrentPage } from "../../providers/CurrentPage";
 import { usePostList } from "../../providers/PostListProvider";
-import { api } from "../../services/api";
 import { Post } from "../Post";
 import { StyledList } from "./styles";
 
 export const PostList = () => {
   const { postList, getPostListFromApi } = usePostList();
   const { getCurrentPage } = useCurrentPage();
-  useEffect(() => {
-    console.log(postList);
-  }, [postList]);
 
   useEffect(() => {
     getPostListFromApi(getCurrentPage);

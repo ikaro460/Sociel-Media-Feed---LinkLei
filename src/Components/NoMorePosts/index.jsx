@@ -1,22 +1,17 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useEffect } from "react";
 import { LoadingAnimation } from "../../graphics";
 import { useCurrentPage } from "../../providers/CurrentPage";
 import { usePostList } from "../../providers/PostListProvider";
-import { api } from "../../services/api";
 import { StyledContainer } from "./styles";
 
 export const NoMorePosts = () => {
-  const { getCurrentPage, setCurrentPage } = useCurrentPage();
+  const { setCurrentPage } = useCurrentPage();
   const { totalCount, postList } = usePostList();
   const containerRef = useRef();
 
   // if this is false it means the list has ended
   const end = postList.length < totalCount;
-
-  const fetchMore = () => {
-    setCurrentPage(getCurrentPage + 1);
-  };
 
   const options = {
     root: containerRef.current,

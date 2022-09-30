@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { createContext, useContext, useState } from "react";
 import { api } from "../../services/api";
 
@@ -12,12 +11,9 @@ export const PostListProvider = ({ children }) => {
     api
       .get(`/posts?_page=${currentPage}&_limit=5&_sort=id&_order=desc`)
       .then((res) => {
-        console.log(res);
-        console.log(Number(res.headers["x-total-count"]));
         setTotalCount(Number(res.headers["x-total-count"]));
         if (postList.length > 0) {
           setPostList([...postList, ...res.data]);
-          console.log(postList);
         } else {
           setPostList(res.data);
         }

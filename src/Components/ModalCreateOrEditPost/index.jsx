@@ -20,7 +20,7 @@ import { usePostToEdit } from "../../providers/PostToEditProvider";
 //Worked that out using conditional renders
 
 export const ModalCreateOrEditPost = () => {
-  const { postList, addPost, editPost, axiosRefreshPostList } = usePostList();
+  const { postList, addPost, editPost } = usePostList();
   const { showModal, hideModal, getShowModal } = useShowModal();
   const { getPostToEdit, setPostToEdit } = usePostToEdit();
 

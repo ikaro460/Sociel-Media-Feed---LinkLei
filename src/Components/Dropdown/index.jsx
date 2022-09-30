@@ -11,8 +11,8 @@ import { usePostToEdit } from "../../providers/PostToEditProvider";
 // Dropdown needs access to the DOM node in order to position the Menu
 
 export const CustomDropdown = ({ id }) => {
-  const { postList, addPost, deletePost } = usePostList();
-  const { showModal, hideModal, getShowModal } = useShowModal();
+  const { postList, deletePost } = usePostList();
+  const { showModal } = useShowModal();
   const { setPostToEdit } = usePostToEdit();
 
   //calling modal and sending post content via DOM
