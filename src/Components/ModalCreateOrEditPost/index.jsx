@@ -56,11 +56,15 @@ export const ModalCreateOrEditPost = () => {
 
   const schema = yup.object().shape({
     authorName: yup.string().required("Campo Obrigatório"),
-    category: yup.string().required("Campo Obrigatório"),
+    category: yup.string().required(),
     text: yup.string().required("Campo Obrigatório"),
   });
 
-  const { register, handleSubmit } = useForm({ resolver: yupResolver(schema) });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (formData) => {
     getPostToEdit
@@ -111,12 +115,15 @@ export const ModalCreateOrEditPost = () => {
             <form id="form1" onSubmit={handleSubmit(onSubmit)}>
               <input
                 {...register("authorName")}
+                error={errors.authorName}
+                helperText={errors.authorName?.message}
                 id="name_input"
                 placeholder="Autor do post"
                 type="text"
                 value={getAuthorName}
                 onChange={onChangeInput}
               />
+              {errors && <span>{errors.authorName?.message}</span>}
               <select
                 {...register("category")}
                 name="category"
@@ -131,12 +138,15 @@ export const ModalCreateOrEditPost = () => {
 
               <textarea
                 {...register("text")}
+                error={errors.text}
+                helperText={errors.text?.message}
                 placeholder="Escrever publicação"
                 rows={5}
                 cols={50}
                 value={getText}
                 onChange={onChangeTextArea}
               />
+              {errors && <span>{errors.text?.message}</span>}
             </form>
           </StyledForm>
         </Modal.Body>

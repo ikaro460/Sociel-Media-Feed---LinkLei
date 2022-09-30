@@ -102,4 +102,10 @@ export const StyledForm = styled.div`
   form > * {
     margin: 5px;
   }
+
+  span {
+    margin: 0 5px;
+    font-size: 0.8em;
+    color: red;
+  }
 `;
