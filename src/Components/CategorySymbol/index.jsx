@@ -5,6 +5,8 @@ import {
 } from "../../graphics";
 import { StyledSymbol } from "./styles";
 
+//Component for rendering the respective category symbol
+
 export const CategorySymbol = ({ category }) => {
   return (
     <StyledSymbol>

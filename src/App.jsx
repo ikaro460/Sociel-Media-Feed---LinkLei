@@ -3,7 +3,7 @@ import { ModalCreateOrEditPost } from "./Components/ModalCreateOrEditPost";
 import { NoMorePosts } from "./Components/NoMorePosts";
 import { PostList } from "./Components/PostList";
 import { LoadingAnimation } from "./graphics";
-import { usePostList } from "./providers/PostListProvider";
+import { usePostList } from "./providers/PostList";
 import GlobalStyle from "./styles/global";
 
 function App() {

@@ -118,11 +118,12 @@ Da mesma forma é possível também editar um post utilizando o seu id:
 
 # **Front-End**
 
-O front end foi feito com base nos padrões de boas práticas, clean code e _DRY_ aceitos pelos padrões da comunidade. </br>
+O front end foi feito com base nos padrões de boas práticas, clean code e _DRY_ aceitos pelos padrões da comunidade, o mais próximo possível do mockup. </br>
 </br>
-Foi utilizado a framework _React Bootstrap_ na componentização e styled-components para estilização, com hooks do react para criar contextos fora outras bibliotecas para funcionalidades específicas como a biblioteca _moment.js_
+Foi utilizado a framework _React Bootstrap_ na componentização, com hooks do react para criar contextos fora outras bibliotecas utilizadas para funcionalidades específicas como no caso da _moment.js_ para envio do horário atual no momento da postagem.
 <br/>
 <br/>
+
 Segue o esquema visual da estrutura do projeto:
 
 ![Icaro Excalidraw Schem](src\graphics\Untitled-2022-04-17-1426.svg "Title")

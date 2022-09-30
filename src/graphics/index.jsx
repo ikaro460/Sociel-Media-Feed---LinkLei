@@ -144,6 +144,7 @@ export const EditPostIcon = () => {
       width="20px"
       height="20px"
       viewBox="0 0 438.533 438.533"
+      fill="var(--purple-1)"
     >
       <g>
         <path
@@ -171,7 +172,12 @@ c0-2.663-0.855-4.854-2.566-6.571c-1.715-1.709-3.905-2.564-6.564-2.564h-201C116.1
 
 export const DeletePostIcon = () => {
   return (
-    <svg height="20px" width="20px" viewBox="0 0 774.266 774.266">
+    <svg
+      height="20px"
+      width="20px"
+      viewBox="0 0 774.266 774.266"
+      fill="var(--purple-1)"
+    >
       <g>
         <g>
           <path

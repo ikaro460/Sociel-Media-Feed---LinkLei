@@ -8,6 +8,7 @@ export const PostListProvider = ({ children }) => {
   const [totalCount, setTotalCount] = useState({});
 
   const getPostListFromApi = (currentPage) => {
+    //get posts according to the current page using routes to customize its content
     api
       .get(`/posts?_page=${currentPage}&_limit=5&_sort=id&_order=desc`)
       .then((res) => {

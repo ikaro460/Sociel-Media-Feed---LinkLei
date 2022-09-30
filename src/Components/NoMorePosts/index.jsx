@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { LoadingAnimation } from "../../graphics";
 import { useCurrentPage } from "../../providers/CurrentPage";
-import { usePostList } from "../../providers/PostListProvider";
+import { usePostList } from "../../providers/PostList";
 import { StyledContainer } from "./styles";
 
 export const NoMorePosts = () => {
@@ -13,20 +13,18 @@ export const NoMorePosts = () => {
   // if this is false it means the list has ended
   const end = postList.length < totalCount;
 
+  //default options for the observer
   const options = {
     root: containerRef.current,
     rootMargin: "0px",
     threshold: 1.0,
   };
 
+  //Infinite Scroll
   useEffect(() => {
-    console.log("mount observer");
     const instersectionObserver = new IntersectionObserver(([entry]) => {
-      console.log(entry);
       if (entry.isIntersecting) {
         setCurrentPage((currentPage) => currentPage + 1);
-        console.log("observed");
-        //setCurrentPage((actualCurrentPage) => actualCurrentPage + 1);
       }
     }, options);
     instersectionObserver.observe(containerRef.current);

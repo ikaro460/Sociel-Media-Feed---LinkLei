@@ -9,12 +9,12 @@ import {
   StyledModalHeader,
   StyledOpenModal,
 } from "./styles";
-import { usePostList } from "../../providers/PostListProvider";
+import { usePostList } from "../../providers/PostList";
 import moment from "moment";
 import "moment/locale/pt-br";
 import { CreatePostIcon } from "../../graphics";
-import { useShowModal } from "../../providers/ShowModalProvider";
-import { usePostToEdit } from "../../providers/PostToEditProvider";
+import { useShowModal } from "../../providers/ShowModal";
+import { usePostToEdit } from "../../providers/PostToEdit";
 
 //Used one component for rendering modals for both editing and adding post
 //Worked that out using conditional renders
@@ -24,11 +24,12 @@ export const ModalCreateOrEditPost = () => {
   const { showModal, hideModal, getShowModal } = useShowModal();
   const { getPostToEdit, setPostToEdit } = usePostToEdit();
 
+  //Declaring states for pre-made input values, in case of editing a post
   const [getAuthorName, setAuthorName] = useState(getPostToEdit.authorName);
   const [getText, setText] = useState(getPostToEdit.text);
   const [getCategory, setCategory] = useState(getPostToEdit.category);
 
-  //useEffect to update states according to context
+  //Update states according to context
   useEffect(() => {
     if (getPostToEdit) {
       setAuthorName(getPostToEdit.authorName);
@@ -37,6 +38,7 @@ export const ModalCreateOrEditPost = () => {
     }
   }, [getPostToEdit]);
 
+  //Controlled inputs update when input value changes
   const onChangeInput = (event) => {
     setAuthorName(event.target.value);
   };
@@ -49,11 +51,13 @@ export const ModalCreateOrEditPost = () => {
     setCategory(event.target.value);
   };
 
+  //Closing modal has to set postToEdit to false
   const handleClose = () => {
     hideModal();
     setPostToEdit(false);
   };
 
+  //form schema with 3 fields
   const schema = yup.object().shape({
     authorName: yup.string().required("Campo Obrigatório"),
     category: yup.string().required(),
@@ -67,6 +71,7 @@ export const ModalCreateOrEditPost = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const onSubmit = (formData) => {
+    //distinguishes edit or create post action and sends different data
     getPostToEdit
       ? editPost({
           id: getPostToEdit.id,

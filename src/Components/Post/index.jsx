@@ -11,6 +11,7 @@ import {
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import { CategorySymbol } from "../CategorySymbol";
 
+//Renders post on screen
 export const Post = ({
   id,
   avatar,

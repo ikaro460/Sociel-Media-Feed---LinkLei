@@ -1,21 +1,19 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { CustomToggleIcon, DeletePostIcon, EditPostIcon } from "../../graphics";
-import { usePostList } from "../../providers/PostListProvider";
-import { useShowModal } from "../../providers/ShowModalProvider";
-import { usePostToEdit } from "../../providers/PostToEditProvider";
+import { usePostList } from "../../providers/PostList";
+import { useShowModal } from "../../providers/ShowModal";
+import { usePostToEdit } from "../../providers/PostToEdit";
+import { StyledContainer } from "./styles";
 
 // ** CUSTOMIZED DROPDOWN COMPONENT FROM REACT-BOOTSTRAP ***
-
-// The forwardRef is important!!
-// Dropdown needs access to the DOM node in order to position the Menu
 
 export const CustomDropdown = ({ id }) => {
   const { postList, deletePost } = usePostList();
   const { showModal } = useShowModal();
   const { setPostToEdit } = usePostToEdit();
 
-  //calling modal and sending post content via DOM
+  //handleModal function sets the id for the post edit or delete
   const handleShowModal = () => {
     const postToEdit = postList.find((e) => e.id === id);
     setPostToEdit(postToEdit);
@@ -37,7 +35,7 @@ export const CustomDropdown = ({ id }) => {
   ));
 
   return (
-    <Dropdown>
+    <Dropdown as={StyledContainer}>
       <Dropdown.Toggle as={CustomToggle} id="dropdown-custom-components">
         Custom toggle
       </Dropdown.Toggle>

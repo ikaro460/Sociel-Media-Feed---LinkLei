@@ -1,7 +1,7 @@
 import { CurrentPageProvider } from "./CurrentPage";
-import { PostListProvider } from "./PostListProvider";
-import { PostToEditProvider } from "./PostToEditProvider";
-import { ShowModalProvider } from "./ShowModalProvider";
+import { PostListProvider } from "./PostList";
+import { PostToEditProvider } from "./PostToEdit";
+import { ShowModalProvider } from "./ShowModal";
 
 export const Providers = ({ children }) => {
   return (
